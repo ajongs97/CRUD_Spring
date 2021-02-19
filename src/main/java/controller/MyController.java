@@ -3,7 +3,9 @@ package controller;
 import mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -29,6 +31,12 @@ public class MyController {
     @RequestMapping(value="/insert2")
     public List<String> insert2(){
         mapper.insert2();
+        return mapper.select();
+    }
+    @ResponseBody
+    @RequestMapping(value="/insert3/{name}", method = RequestMethod.GET)
+    public List<String> insert3(@PathVariable String name){
+        mapper.insert3(name);
         return mapper.select();
     }
 

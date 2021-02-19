@@ -18,6 +18,9 @@ public interface Mapper {
     @Insert("insert into member(name) values('Park')")
     void insert2();
 
+    @Insert("insert into member(name) values(#{name})")
+    void insert3(String name);
+
     @Update("update member set name='wonjong' where name = 'park'")
     void update();
 
