@@ -7,6 +7,9 @@ public class Member {
     private String name;
     private String age;
 
+    public Member() {
+    }
+
     public String getName() {
         return name;
     }

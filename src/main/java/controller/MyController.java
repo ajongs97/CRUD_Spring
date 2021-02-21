@@ -19,6 +19,12 @@ public class MyController {
     }
 
     @ResponseBody
+    @RequestMapping(value="/select2")
+    public Member select2(){
+        return mapper.select2();
+    }
+
+    @ResponseBody
     @RequestMapping(value="/insert", produces = "application/json; charset=utf8", method = RequestMethod.POST)
     public String insert(@RequestBody Member member){
         mapper.insert(member);

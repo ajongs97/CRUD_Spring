@@ -14,6 +14,7 @@ public interface Mapper {
     @Select("select * from member")
     List<Member> select();
 
+    public Member select2();
 
     @Insert("insert into member(name, age) values(#{name}, #{age})")
     void insert(Member member);
