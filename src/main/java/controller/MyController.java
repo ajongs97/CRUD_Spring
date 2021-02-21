@@ -34,7 +34,7 @@ public class MyController {
     @ResponseBody
     @RequestMapping(value="/insert2", produces = "application/json; charset=utf8", method = RequestMethod.POST)
     public String insert2(@RequestBody Member member){
-        mapper.insert(member);
+        mapper.insert2(member);
         return member.getName() + " 데이터 추가완료";
     }
 
@@ -44,11 +44,23 @@ public class MyController {
         mapper.update(member);
         return member.getName() + " update";
     }
+    @ResponseBody
+    @RequestMapping(value="/update2", produces = "application/json; charset=utf8", method = RequestMethod.PUT)
+    public String update2(@RequestBody Member member){
+        mapper.update2(member);
+        return member.getName() + " update";
+    }
 
     @ResponseBody
     @RequestMapping(value="/delete", produces = "application/json; charset=utf8", method = RequestMethod.DELETE)
     public String delete(@RequestBody Member member){
         mapper.delete(member);
+        return "delete " + member.getName();
+    }
+    @ResponseBody
+    @RequestMapping(value="/delete2", produces = "application/json; charset=utf8", method = RequestMethod.DELETE)
+    public String delete2(@RequestBody Member member){
+        mapper.delete2(member);
         return "delete " + member.getName();
     }
 }

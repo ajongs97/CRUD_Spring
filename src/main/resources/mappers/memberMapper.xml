@@ -10,8 +10,16 @@
     </select>
     <insert id="insert2" parameterType="controller.Member">
         insert into
-            member(name, age)
-            values(#{name}, #{age})
+        member(name, age)
+        values(#{name}, #{age})
     </insert>
-
+    <update id="update2" parameterType="controller.Member">
+        update member
+        set age = #{age}
+        where name = #{name}
+    </update>
+    <delete id="delete2" parameterType="controller.Member">
+        delete from member
+        where name = #{name}
+    </delete>
 </mapper>

@@ -26,4 +26,7 @@ public interface Mapper {
     //XML을 이용한 CRUD
     public List<Member> select2();
     void insert2(Member member);
+    void update2(Member member);
+    void delete2(Member member);
+
 }
