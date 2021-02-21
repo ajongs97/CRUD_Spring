@@ -8,4 +8,10 @@
     <select id="select2" resultType="controller.Member">
         select * from member
     </select>
+    <insert id="insert2" parameterType="controller.Member">
+        insert into
+            member(name, age)
+            values(#{name}, #{age})
+    </insert>
+
 </mapper>

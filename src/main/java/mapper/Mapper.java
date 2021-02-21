@@ -11,10 +11,9 @@ import java.util.List;
 
 @Repository
 public interface Mapper {
+    //anotation을 이용한 CRUD
     @Select("select * from member")
     List<Member> select();
-
-    public Member select2();
 
     @Insert("insert into member(name, age) values(#{name}, #{age})")
     void insert(Member member);
@@ -22,7 +21,9 @@ public interface Mapper {
     @Update("update member set age = #{age} where name = #{name} ")
     void update(Member member);
 
-
     @Delete("Delete from member where name = #{name}")
     void delete(Member member);
+    //XML을 이용한 CRUD
+    public List<Member> select2();
+    void insert2(Member member);
 }
