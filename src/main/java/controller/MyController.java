@@ -13,54 +13,28 @@ public class MyController {
     Mapper mapper;
 
     @ResponseBody
-    @RequestMapping(value="/select")
+    @RequestMapping(value="/members",produces = "application/json; charset=utf8", method = RequestMethod.GET)
     public List<Member> select(){
         return mapper.select();
     }
 
     @ResponseBody
-    @RequestMapping(value="/select2")
-    public List<Member> select2(){
-        return mapper.select2();
-    }
-
-    @ResponseBody
-    @RequestMapping(value="/insert", produces = "application/json; charset=utf8", method = RequestMethod.POST)
+    @RequestMapping(value="/members", produces = "application/json; charset=utf8", method = RequestMethod.POST)
     public String insert(@RequestBody Member member){
         mapper.insert(member);
         return member.getName() + " 데이터 추가완료";
     }
-
     @ResponseBody
-    @RequestMapping(value="/insert2", produces = "application/json; charset=utf8", method = RequestMethod.POST)
-    public String insert2(@RequestBody Member member){
-        mapper.insert2(member);
-        return member.getName() + " 데이터 추가완료";
-    }
-
-    @ResponseBody
-    @RequestMapping(value="/update", produces = "application/json; charset=utf8", method = RequestMethod.PUT)
+    @RequestMapping(value="/members", produces = "application/json; charset=utf8", method = RequestMethod.PUT)
     public String update(@RequestBody Member member){
         mapper.update(member);
         return member.getName() + " update";
     }
     @ResponseBody
-    @RequestMapping(value="/update2", produces = "application/json; charset=utf8", method = RequestMethod.PUT)
-    public String update2(@RequestBody Member member){
-        mapper.update2(member);
-        return member.getName() + " update";
-    }
-
-    @ResponseBody
-    @RequestMapping(value="/delete", produces = "application/json; charset=utf8", method = RequestMethod.DELETE)
+    @RequestMapping(value="/members", produces = "application/json; charset=utf8", method = RequestMethod.DELETE)
     public String delete(@RequestBody Member member){
         mapper.delete(member);
         return "delete " + member.getName();
     }
-    @ResponseBody
-    @RequestMapping(value="/delete2", produces = "application/json; charset=utf8", method = RequestMethod.DELETE)
-    public String delete2(@RequestBody Member member){
-        mapper.delete2(member);
-        return "delete " + member.getName();
-    }
+
 }
