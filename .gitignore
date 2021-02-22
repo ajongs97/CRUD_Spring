@@ -11,6 +11,6 @@ projectName.iml
 target/
 out/
 # properties file
-src/main/resources/mybatis/jdbc.properties
 classes/*
 lib/*
+src/main/resources/application.properties
